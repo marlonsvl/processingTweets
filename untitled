@@ -1,0 +1,12 @@
+""" Counting tweets by date and tag"""
+from bd import *
+import datetime
+if __name__ == '__main__':
+    """
+    """
+    #objeto = BDdatos()
+    #registros = objeto.datos_tabla_por_row('tweetselnino_b');
+    date = datetime.datetime(2003,8,1,12,4,5)
+    for i in range(5): 
+        date += datetime.timedelta(days=1)
+        print(date) 

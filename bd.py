@@ -34,6 +34,19 @@ class BDdatos():
         """
         db.close()
     
+    def datos_tabla_por_fecha(self, tabla, tag, fecha_ini, fecha_fin):
+        """
+            conectarme a la bd, para sacar los datos necesarios
+        """
+        db=self.conectar() 
+        cursor=db.cursor()
+        sql = "select count(*) from %s where MATCH(text) against('+%s' IN BOOLEAN MODE) and tweet_date >= '%s' and tweet_date <= '%s';"% (tabla, tag, fecha_ini, fecha_fin)
+        #print(sql)
+        cursor.execute(sql)
+        datos = cursor.fetchone()
+        db.close()
+        return datos
+
     def datos_tabla(self, tabla):
         """
             conectarme a la bd, para sacar los datos necesarios
