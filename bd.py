@@ -52,7 +52,7 @@ class BDdatos():
         """
         db=self.conectar() 
         cursor=db.cursor()
-        sql = "select * from %s;"%tabla
+        sql = "select * from %s limit 100;"%tabla
         cursor.execute(sql)
         registros = cursor.fetchall()
         db.commit()
@@ -60,7 +60,7 @@ class BDdatos():
         return registros
         
     
-    def insertar_datos(self, nombre, tabla):
+    def insertar_datos(self, nombre, tabla, columna):
         
         db=self.conectar() 
         cursor=db.cursor()
@@ -69,10 +69,10 @@ class BDdatos():
         db.commit()
         db.close()
     
-    def update_datos(self, tabla, t1, registroid):
+    def update_datos(self, tabla, columna, t1, registroid):
         db=self.conectar()
         cursor=db.cursor()
-        cursor.execute("UPDATE %s SET language = '%s' WHERE id = '%s'"% (tabla, t1, registroid))
+        cursor.execute("UPDATE %s SET %s = '%s' WHERE id = '%s'"% (tabla, columna, t1, registroid))
         db.commit()
         db.close()
     

@@ -3,9 +3,8 @@ import json
 if __name__ == '__main__':
     """
     """
-        #cuando es multivaluado
     objeto = BDdatos()
-    registros = objeto.datos_tabla_por_row('tweetselnino_a');
+    registros = objeto.datos_tabla_por_row('tweetselnino_b');
     text = ""
     test1 = "";
     test2 = "";
@@ -25,4 +24,4 @@ if __name__ == '__main__':
             objeto.update_datos('tweetselnino_a', test1, registro['id'])
         else:
         	print(">>>>>>>> Modifica con langid: %s"%tweet['lang'])
-        	objeto.update_datos('tweetselnino_a', test2, registro['id'])
+        	objeto.update_datos('tweetselnino_a', 'lannguage', test2, registro['id'])
