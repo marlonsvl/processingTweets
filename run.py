@@ -1,4 +1,5 @@
 from bd import *
+from config import *
 import json
 if __name__ == '__main__':
     """

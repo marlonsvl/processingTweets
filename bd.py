@@ -47,7 +47,7 @@ class BDdatos():
         db.close()
         return datos
 
-    def datos_tabla_por_fecha_por2tags(self, tabla, tag1, tag2, fecha_ini, fecha_fin):
+    def datos_tabla_por_fecha_por2tags(self, tabla, tag1, tag2):
         """
             conectarme a la bd, para sacar los datos necesarios
         """
