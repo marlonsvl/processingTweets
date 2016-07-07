@@ -47,6 +47,19 @@ class BDdatos():
         db.close()
         return datos
 
+    def datos_tabla_por_fecha_por2tags(self, tabla, tag1, tag2, fecha_ini, fecha_fin):
+        """
+            conectarme a la bd, para sacar los datos necesarios
+        """
+        db=self.conectar() 
+        cursor=db.cursor()
+        sql = "select count(*) from %s where MATCH(text) against('+\"%s\" +\"%s\"' IN BOOLEAN MODE);"% (tabla, tag1, tag2)
+        #print(sql)
+        cursor.execute(sql)
+        datos = cursor.fetchone()
+        db.close()
+        return datos
+
     def datos_tabla(self, tabla):
         """
             conectarme a la bd, para sacar los datos necesarios
