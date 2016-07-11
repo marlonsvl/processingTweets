@@ -11,7 +11,7 @@ lista_tags = ['sequía', 'fen', 'inundación', 'aguacero', 'fenómeno El Nino', 
 'fenómeno nino', 'nino godzilla', 'fenómeno del Nino', 'elnino','fenómenonino',
 'fenómenodelnino','fenómenodeelnino','fenómenoelnino']
 nombre_tabla = 'tweetselnino_aux_a';
-ruta_archivos_csv = '/Users/utpl/Documents/processingTweets/tweets_a/';
+ruta_archivos_csv = '/Users/utpl/Documents/processingTweets/tweetselnino_a/';
 #fecha de de inicio para las consultas
 anio = 2015
 mes = 9

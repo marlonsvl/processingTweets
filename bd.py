@@ -72,6 +72,18 @@ class BDdatos():
         db.close()
         return datos
 
+    def datos_masretweets(self, tabla, tag):
+        """
+            mas retweets
+        """
+        db=self.conectar() 
+        cursor=db.cursor()
+        sql = "select * from %s where MATCH(text) against('+\"%s\"' IN BOOLEAN MODE) ORDER BY retweet_count DESC limit 10; "% (tabla, tag)
+        cursor.execute(sql)
+        datos = cursor.fetchall()
+        db.close()
+        return datos
+
     def datos_tabla_por_row(self, tabla):
         """
             conectarme a la bd, para sacar los datos necesarios
